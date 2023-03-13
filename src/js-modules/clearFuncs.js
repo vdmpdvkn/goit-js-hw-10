@@ -1,7 +1,7 @@
-export function clearText(element) {
+export function clearTextContent(element) {
   element.innerHTML = '';
 }
-export function clearAll(el1, el2) {
-  clearText(el1);
-  clearText(el2);
+export function clearAllTextContent(el1, el2) {
+  clearTextContent(el1);
+  clearTextContent(el2);
 }
