@@ -12,12 +12,12 @@ const DEBOUNCE_DELAY = 300;
 inputEl.addEventListener('input', debounce(findCountry, DEBOUNCE_DELAY));
 
 function findCountry(evt) {
-  const inputValue = evt.target.value;
-  if (inputValue.trim() === '') {
+  const trimmedInputValue = evt.target.value.trim();
+  if (trimmedInputValue === '') {
     clearAll(countryInfoEl, countryListEl);
     return;
   }
-  fetchCountries(inputValue)
+  fetchCountries(trimmedInputValue)
     .then(data => {
       if (data.length > 10) {
         clearAll(countryInfoEl, countryListEl);
