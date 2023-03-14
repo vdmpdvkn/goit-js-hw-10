@@ -1,6 +1,6 @@
 import { Notify } from 'notiflix';
 import { refs } from './refs';
-import { clearAllTextContent } from './clearFuncs';
+import { clearTextContent } from './clearFuncs';
 
 const BASE_URL = 'https://restcountries.com/v3.1/name/';
 
@@ -10,7 +10,7 @@ function fetchCountries(name) {
   ).then(response => {
     if (response.status === 404) {
       Notify.failure('Oops, there is no country with that name');
-      clearAllTextContent(refs.countryInfoEl, refs.countryListEl);
+      clearTextContent(refs.countryInfoEl, refs.countryListEl);
       return;
     }
     return response.json();
